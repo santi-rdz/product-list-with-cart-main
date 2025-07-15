@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="output.css" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+
+    <title>Frontend Mentor | Product list with cart</title>
+  </head>
+  <body class="py-[clamp(1.25rem,-0.2465rem+6.385vw,5.5rem)]">
+    <main class="my-container grid grid-cols-1 lg:items-start xl:grid-cols-[70fr_30fr] xl:gap-8">
+      <section>
+        <header class="flex items-center justify-between">
+          <h1 class="text-1 font-bold text-rose-900">Desserts</h1>
+          <a
+            class="flex rounded-full border border-rose-400 p-3 shadow-lg transition-[transform_background-color_shadow] duration-300 ease-out hover:scale-105 hover:bg-rose-50 hover:shadow-md xl:hidden"
+            href="#cart"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6 text-rose-500"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
+              />
+            </svg>
+          </a>
+        </header>
+        <section class="my-grid products-list mt-8"></section>
+      </section>
+
+      <section id="cart" class="cart-container relative mt-8 flex flex-col rounded-xl bg-white p-6 shadow-sm">
+        <h1 class="text-2 text-red-burnt font-bold" id="cart-quantity">Your cart (0)</h1>
+        <img class="mt-10 self-center" src="assets/images/illustration-empty-cart.svg" alt="" />
+        <p class="text-4 mt-5 text-center font-bold text-rose-500">Your added items will appear here</p>
+      </section>
+      <div class="overlay fixed inset-0 z-10 hidden bg-rose-900/40 active:block">
+        <div
+          class="confirm-order xs:p-10 xs:inset-0 xs:h-fit xs:rounded-xl xs:m-auto xs:w-3/4 fixed right-0 bottom-0 z-20 h-fit w-dvw scale-100 space-y-8 rounded-t-xl bg-white px-4 py-10 opacity-100 transition-[opacity_scale] duration-300 ease-in-out sm:p-10 lg:max-w-[700px]"
+        >
+          <header class="space-y-2">
+            <img src="assets/images/icon-order-confirmed.svg" alt="" />
+            <h1 class="text-1 font-bold text-rose-900">Order Confirmed</h1>
+            <p class="text-3 font-normal text-rose-500">We hope you enjoy your food!</p>
+          </header>
+          <section class="rounded-lg bg-rose-50 p-6">
+            <ul
+              class="order-list scrollbar-thin scrollbar-thumb-rose-400 scrollbar-track-transparent 2xs:max-h-[20rem] mt-6 max-h-[10rem] space-y-4 overflow-y-auto pr-2 sm:max-h-[14rem] md:max-h-[17rem] lg:max-h-[12rem] xl:max-h-[15rem]"
+            ></ul>
+            <p class="text-3 mt-6 flex items-center justify-between">
+              Order Total <span class="order-total text-2 font-semibold"></span>
+            </p>
+          </section>
+          <button
+            class="new-order bg-red-burnt w-full cursor-pointer rounded-full p-4 font-semibold text-white transition-opacity duration-300 hover:opacity-90"
+          >
+            Start New Order
+          </button>
+        </div>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

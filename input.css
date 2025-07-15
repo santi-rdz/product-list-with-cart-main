@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "hat";
+  src: url("assets/fonts/RedHatText-VariableFont_wght.ttf");
+  font-style: normal;
+}
+@custom-variant controls-active (&:where(.controls-active, .controls-active *));
+@custom-variant active (&.active);
+
+@theme {
+  --font-hat: "hat";
+  --color-red-burnt: #c73b0f;
+  --color-rose-900: #260f08;
+  --color-rose-500: #87635a;
+  --color-rose-400: #ad8a85;
+  --color-rose-300: #caafa7;
+  --color-rose-100: #f5eeec;
+  --color-rose-50: #fcf8f6;
+  --breakpoint-xs: 583px;
+  --breakpoint-2xs: 390px;
+  --breakpoint-xl: 1192px;
+  --color-green-mint: #1ea575;
+}
+
+@utility text-1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  letter-spacing: 0px;
+}
+@utility text-2 {
+  font-size: 1.5rem;
+  line-height: 1.25;
+}
+@utility text-3 {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+@utility text-4 {
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+@utility my-container {
+  width: min(90%, 90rem);
+  margin-inline: auto;
+}
+
+@utility my-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.controls,
+.btn-add {
+  @starting-style {
+    opacity: 0;
+    scale: 0.75;
+  }
+}
+
+.confirm-order {
+  @starting-style {
+    opacity: 0;
+    scale: 0.5;
+  }
+}
