@@ -1,4 +1,4 @@
-# Frontend Mentor - Product List with Cart Solution
+# Fully Responsive Product List with Cart Solution
 
 Solution to [Challenge](https://www.frontendmentor.io/challenges/product-list-with-cart-5MmqLVAp_d). 
 
