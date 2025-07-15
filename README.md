@@ -11,7 +11,7 @@ Live site: [site](https://rdz-product-list.netlify.app/)
 <img width="457" height="1000" alt="image" src="https://github.com/user-attachments/assets/06efcdaa-bfed-41f3-af10-80cce8a1c1ee" />
 
 
-### 🛍 The Challenge
+### The Challenge
 
 Users should be able to:
 
