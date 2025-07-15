@@ -4,13 +4,30 @@ const overlay = document.querySelector(".overlay");
 
 let myProducts = [];
 
+productsContainer.innerHTML = `
+  <article class="product skeleton">
+    <div class="relative rounded-lg">
+        <div class="skeleton:animate-loading h-64 overflow-hidden rounded-lg"></div>
+      <button
+        class="skeleton:h-10 skeleton:animate-loading absolute right-1/2 bottom-0 flex w-40 translate-x-1/2 translate-y-1/2 scale-100 items-center justify-center gap-2 rounded-full border border-rose-200 bg-white py-3 duration-300 hover:shadow-sm"
+      ></button>
+    </div>
+     <div class="skeleton:space-y-2 mt-9">
+      <p class="skeleton:rounded-md skeleton:w-1/4 skeleton:h-5 skeleton:animate-loading"></p>
+      <p class="skeleton:rounded-md skeleton:w-5/6 skeleton:h-5 skeleton:animate-loading"></p>
+      <span class="skeleton:rounded-md skeleton:block skeleton:w-1/6 skeleton:h-5 skeleton:animate-loading">
+      </span>
+    </div>
+  </article>
+`.repeat(10);
+
 fetch("data.json")
   .then((response) => {
-    if (!response.ok) throw new Error("Error al cargar data.json");
+    if (!response.ok) throw new Error("Error loading data");
     return response.json();
   })
   .then(displayProducts)
-  .catch((error) => console.error("Error al obtener los datos:", error));
+  .catch((error) => console.error("Error getting data", error));
 
 productsContainer.addEventListener("click", (e) => {
   if (e.target.closest(".btn-add")) handleAddProduct(e);
@@ -108,7 +125,7 @@ function displayProducts(data) {
       return `
      <article class="product " data-category="${category}" data-name="${name}" data-price=${price.toFixed(2)} data-img="${img}" data-id=${id++}>
         <div class="group relative rounded-lg controls-active:shadow-[0_0_0_2px_#c73b0f]">
-          <div class="h-64 overflow-hidden rounded-lg">
+          <div class="h-64 overflow-hidden rounded-lg ">
             <img
               class="h-full w-full object-cover object-center transition-transform duration-300 ease-out group-hover:scale-110"
               src="${img}"
@@ -116,9 +133,10 @@ function displayProducts(data) {
             />
           </div>
           <button
-            class="controls-active:hidden btn-add text-4 hover:text-red-burnt absolute right-1/2 bottom-0 flex w-40 translate-x-1/2 translate-y-1/2 scale-100 cursor-pointer items-center justify-center gap-2 rounded-full border border-rose-400 bg-white py-3 font-bold text-nowrap opacity-100 transition-[opacity_transform_color_shadow] duration-300 hover:shadow-sm hover:border-red-burnt"
+            class="controls-active:hidden  btn-add text-4 hover:text-red-burnt absolute right-1/2 bottom-0 flex w-40 translate-x-1/2 translate-y-1/2 scale-100 cursor-pointer items-center justify-center gap-2 rounded-full border border-rose-400 bg-white py-3 font-bold text-nowrap opacity-100 transition-[opacity_transform_color_shadow] duration-300 hover:shadow-sm hover:border-red-burnt"
           >
-            <img src="assets/images/icon-add-to-cart.svg" alt="" />Add to cart
+            <img class="skeleton:hidden" src="assets/images/icon-add-to-cart.svg" alt="" />
+            <p class="skeleton:hidden">Add to cart</p>
           </button>
           <div
             class="controls text-4 bg-red-burnt controls-active:flex absolute right-1/2 bottom-0 hidden w-40 translate-x-1/2 translate-y-1/2 scale-100 cursor-pointer items-center justify-between gap-2 rounded-full px-4 py-3 font-bold text-nowrap opacity-100 transition-[opacity_transform_color_shadow] duration-300 hover:shadow-xs hover:shadow-red-burnt"
@@ -147,10 +165,10 @@ function displayProducts(data) {
             </button>
           </div>
         </div>
-        <div class="product-content mt-9 space-y-[3px]">
-          <p class="category text-4 text-rose-500">${category}</p>
-          <p class="name text-3 font-bold text-rose-900">${name}</p>
-          <span class="price text-red-burnt font-semibold">$${price.toFixed(2)}</span>
+        <div class="product-content mt-9 space-y-[3px] ">
+          <p class="category text-4 text-rose-500 ">${category}</p>
+          <p class="name text-3 font-bold text-rose-900 ">${name}</p>
+          <span class="price text-red-burnt font-semibold ">$${price.toFixed(2)}</span>
         </div>
       </article>`;
     })

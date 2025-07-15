@@ -9,6 +9,7 @@
       "Courier New", monospace;
     --color-rose-50: #fcf8f6;
     --color-rose-100: #f5eeec;
+    --color-rose-200: oklch(89.2% 0.058 10.001);
     --color-rose-300: #caafa7;
     --color-rose-400: #ad8a85;
     --color-rose-500: #87635a;
@@ -18,7 +19,9 @@
     --font-weight-normal: 400;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
+    --radius-xs: 0.125rem;
     --radius-sm: 0.25rem;
+    --radius-md: 0.375rem;
     --radius-lg: 0.5rem;
     --radius-xl: 0.75rem;
     --ease-out: cubic-bezier(0, 0, 0.2, 1);
@@ -28,6 +31,7 @@
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
     --color-red-burnt: #c73b0f;
+    --animate-loading: loading 1s linear infinite alternate;
   }
 }
 @layer base {
@@ -392,6 +396,9 @@
   }
   .border-rose-100 {
     border-color: var(--color-rose-100);
+  }
+  .border-rose-200 {
+    border-color: var(--color-rose-200);
   }
   .border-rose-300 {
     border-color: var(--color-rose-300);
@@ -769,6 +776,69 @@
       box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
     }
   }
+  .skeleton\:block {
+    &:where(.skeleton, .skeleton *) {
+      display: block;
+    }
+  }
+  .skeleton\:hidden {
+    &:where(.skeleton, .skeleton *) {
+      display: none;
+    }
+  }
+  .skeleton\:h-5 {
+    &:where(.skeleton, .skeleton *) {
+      height: calc(var(--spacing) * 5);
+    }
+  }
+  .skeleton\:h-10 {
+    &:where(.skeleton, .skeleton *) {
+      height: calc(var(--spacing) * 10);
+    }
+  }
+  .skeleton\:w-1\/4 {
+    &:where(.skeleton, .skeleton *) {
+      width: calc(1/4 * 100%);
+    }
+  }
+  .skeleton\:w-1\/6 {
+    &:where(.skeleton, .skeleton *) {
+      width: calc(1/6 * 100%);
+    }
+  }
+  .skeleton\:w-5\/6 {
+    &:where(.skeleton, .skeleton *) {
+      width: calc(5/6 * 100%);
+    }
+  }
+  .skeleton\:animate-loading {
+    &:where(.skeleton, .skeleton *) {
+      animation: var(--animate-loading);
+    }
+  }
+  .skeleton\:space-y-1\.5 {
+    &:where(.skeleton, .skeleton *) {
+      :where(& > :not(:last-child)) {
+        --tw-space-y-reverse: 0;
+        margin-block-start: calc(calc(var(--spacing) * 1.5) * var(--tw-space-y-reverse));
+        margin-block-end: calc(calc(var(--spacing) * 1.5) * calc(1 - var(--tw-space-y-reverse)));
+      }
+    }
+  }
+  .skeleton\:space-y-2 {
+    &:where(.skeleton, .skeleton *) {
+      :where(& > :not(:last-child)) {
+        --tw-space-y-reverse: 0;
+        margin-block-start: calc(calc(var(--spacing) * 2) * var(--tw-space-y-reverse));
+        margin-block-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-y-reverse)));
+      }
+    }
+  }
+  .skeleton\:rounded-md {
+    &:where(.skeleton, .skeleton *) {
+      border-radius: var(--radius-md);
+    }
+  }
 }
 @font-face {
   font-family: "hat";
@@ -903,6 +973,16 @@
 @property --tw-ease {
   syntax: "*";
   inherits: false;
+}
+@keyframes loading {
+  0% {
+    background-color: oklch(89.2% 0.058 10.001);
+    opacity: 0.3;
+  }
+  100% {
+    background-color: oklch(89.2% 0.058 10.001);
+    opacity: 0.9;
+  }
 }
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {

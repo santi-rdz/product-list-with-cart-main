@@ -6,6 +6,7 @@
   font-style: normal;
 }
 @custom-variant controls-active (&:where(.controls-active, .controls-active *));
+@custom-variant skeleton (&:where(.skeleton, .skeleton *));
 @custom-variant active (&.active);
 
 @theme {
@@ -21,6 +22,18 @@
   --breakpoint-2xs: 390px;
   --breakpoint-xl: 1192px;
   --color-green-mint: #1ea575;
+  --animate-loading: loading 1s linear infinite alternate;
+
+  @keyframes loading {
+    0% {
+      background-color: oklch(89.2% 0.058 10.001);
+      opacity: 0.3;
+    }
+    100% {
+      background-color: oklch(89.2% 0.058 10.001);
+      opacity: 0.9;
+    }
+  }
 }
 
 @utility text-1 {
