@@ -24,16 +24,15 @@ cartContainer.addEventListener("click", (e) => {
     overlay.classList.add("active");
     document.body.classList.add("overflow-hidden");
     updateOrder();
+    clearActiveControls();
+    myProducts = [];
+    updateCart();
   }
 });
 
 overlay.addEventListener("click", closeModal);
 
 document.querySelector(".new-order").addEventListener("click", () => {
-  myProducts = [];
-  clearActiveControls();
-  updateCart();
-  updateOrder();
   closeModal();
 });
 
