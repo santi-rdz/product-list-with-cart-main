@@ -5,7 +5,7 @@ Solution to [Challenge](https://www.frontendmentor.io/challenges/product-list-wi
 Live site: [site](https://rdz-product-list.netlify.app/)
 
 ### Preview 
-<img width="1574" height="710" alt="image" src="https://github.com/user-attachments/assets/481d1bf8-45eb-4da4-b293-d201d62da064" />
+<img width="3336" height="2810" alt="product-list" src="https://github.com/user-attachments/assets/b7f64a31-16f4-4634-aa5b-5fa9d0b5e5ab" />
 <img width="457" height="997" alt="image" src="https://github.com/user-attachments/assets/cd748660-ce68-4c23-ae80-720c21be71d9" />
 <img width="1666" height="997" alt="image" src="https://github.com/user-attachments/assets/aea54c49-f94b-4877-bba3-ac1030226542" />
 <img width="457" height="1000" alt="image" src="https://github.com/user-attachments/assets/06efcdaa-bfed-41f3-af10-80cce8a1c1ee" />
