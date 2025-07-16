@@ -1,7 +1,7 @@
 const productsContainer = document.querySelector(".products-list");
 const cartContainer = document.querySelector(".cart-container");
 const overlay = document.querySelector(".overlay");
-
+const header = document.querySelector(".header");
 let myProducts = [];
 
 productsContainer.innerHTML = `
@@ -20,6 +20,11 @@ productsContainer.innerHTML = `
     </div>
   </article>
 `.repeat(10);
+
+const listCoords = productsContainer.getBoundingClientRect();
+window.addEventListener("scroll", () => {
+  window.scrollY > listCoords.top ? header.classList.add("isSticky") : header.classList.remove("isSticky");
+});
 
 fetch("data.json")
   .then((response) => {
@@ -124,7 +129,7 @@ function displayProducts(data) {
     .map(({ image: { desktop: img }, name, category, price }) => {
       return `
      <article class="product " data-category="${category}" data-name="${name}" data-price=${price.toFixed(2)} data-img="${img}" data-id=${id++}>
-        <div class="group relative rounded-lg controls-active:shadow-[0_0_0_2px_#c73b0f]">
+        <div class="group relative rounded-lg controls-active:shadow-[0_0_0_2px_#c73b0f] ">
           <div class="h-64 overflow-hidden rounded-lg ">
             <img
               class="h-full w-full object-cover object-center transition-transform duration-300 ease-out group-hover:scale-110"

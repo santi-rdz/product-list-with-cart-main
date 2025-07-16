@@ -8,6 +8,7 @@
 @custom-variant controls-active (&:where(.controls-active, .controls-active *));
 @custom-variant skeleton (&:where(.skeleton, .skeleton *));
 @custom-variant active (&.active);
+@custom-variant isSticky (&.isSticky);
 
 @theme {
   --font-hat: "hat";

@@ -8,30 +8,32 @@
 
     <title>Frontend Mentor | Product list with cart</title>
   </head>
-  <body class="bg-rose-50 py-[clamp(1.25rem,-0.2465rem+6.385vw,5.5rem)]">
+  <body id="body" class="bg-rose-50 py-[clamp(1.25rem,-0.2465rem+6.385vw,5.5rem)]">
+    <header 
+      class="my-container header max-xl:isSticky:[&>a]:scale-75 max-xl:isSticky:[&_span]:flex max-xl:isSticky:[&>a]:-translate-x-3 max-xl:isSticky:[&>a:last-child]:scale-95 max-xl:isSticky:shadow-xl max-xl:isSticky:sticky max-xl:isSticky:py-3.5 max-xl:isSticky:w-[95%] max-xl:isSticky:px-4 max-xl:isSticky:bg-rose-50/95 z-5 flex items-center justify-between rounded-full bg-rose-50 shadow-rose-500/40 max-xl:top-4 xl:static xl:py-0"
+    >
+      <a href="#body"" class="group text-1 font-bold text-rose-900 transition-transform duration-300 flex items-center gap-2">Desserts <span class="hidden scale-50  opacity-0 group-hover:opacity-100 group-hover:scale-80  transition-[transform_opacity] duration-200 ease-out">&uparrow;</span></a>
+      <a
+        class="flex rounded-full border border-rose-300 bg-white p-3 shadow-md transition-[transform_background-color_shadow] duration-300 ease-out hover:scale-105 hover:bg-rose-50 hover:shadow-lg xl:hidden"
+        href="#cart"
+        ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-6 text-rose-500"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
+          />
+        </svg>
+      </a>
+    </header>
     <main class="my-container grid grid-cols-1 lg:items-start xl:grid-cols-[70fr_30fr] xl:gap-8">
-      <section>
-        <header class="flex items-center justify-between">
-          <h1 class="text-1 font-bold text-rose-900">Desserts</h1>
-          <a
-            class="flex rounded-full border border-rose-300 p-3 shadow-md transition-[transform_background-color_shadow] duration-300 ease-out hover:scale-105 hover:bg-rose-50 hover:shadow-lg xl:hidden"
-            href="#cart"
-            ><svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="size-6 text-rose-500"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
-              />
-            </svg>
-          </a>
-        </header>
+      <section id="products">
         <section class="my-grid products-list mt-8">
           <article class="product skeleton">
             <div class="relative rounded-lg">
@@ -50,7 +52,7 @@
         </section>
       </section>
 
-      <section id="cart" class="cart-container relative mt-8 flex flex-col rounded-xl bg-white p-6 shadow-sm">
+      <section id="cart" class="cart-container relative mt-8 flex flex-col rounded-xl bg-white p-6 shadow-sm xl:mt-0">
         <h1 class="text-2 text-red-burnt font-bold" id="cart-quantity">Your cart (0)</h1>
         <img class="mt-10 self-center" src="assets/images/illustration-empty-cart.svg" alt="" />
         <p class="text-4 mt-5 text-center font-bold text-rose-500">Your added items will appear here</p>
@@ -66,7 +68,7 @@
           </header>
           <section class="rounded-lg bg-rose-50 p-6">
             <ul
-              class="order-list scrollbar-thin scrollbar-thumb-rose-400 scrollbar-track-transparent 2xs:max-h-[20rem] mt-6 max-h-[10rem] space-y-4 overflow-y-auto pr-2 sm:max-h-[14rem] md:max-h-[17rem] lg:max-h-[12rem] xl:max-h-[15rem]"
+              class="order-list scrollbar-thin scrollbar-thumb-rose-400 scrollbar-track-transparent 2xs:max-h-[14rem] mt-6 max-h-[9rem] space-y-4 overflow-y-auto pr-2 sm:max-h-[14rem] md:max-h-[17rem] lg:max-h-[12rem] xl:max-h-[15rem]"
             ></ul>
             <p class="text-3 mt-6 flex items-center justify-between">
               Order Total <span class="order-total text-2 font-semibold"></span>
