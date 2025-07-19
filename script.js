@@ -55,6 +55,7 @@ cartContainer.addEventListener("click", (e) => {
 overlay.addEventListener("click", closeModal);
 
 document.querySelector(".new-order").addEventListener("click", () => {
+  window.location.href = "#body";
   closeModal();
 });
 

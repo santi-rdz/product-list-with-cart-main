@@ -9,10 +9,15 @@
     <title>Frontend Mentor | Product list with cart</title>
   </head>
   <body id="body" class="bg-rose-50 py-[clamp(1.25rem,-0.2465rem+6.385vw,5.5rem)]">
-    <header 
-      class="my-container header max-xl:isSticky:[&>a]:scale-75 max-xl:isSticky:[&_span]:flex max-xl:isSticky:[&>a]:-translate-x-3 max-xl:isSticky:[&>a:last-child]:scale-95 max-xl:isSticky:shadow-xl max-xl:isSticky:sticky max-xl:isSticky:py-3.5 max-xl:isSticky:w-[95%] max-xl:isSticky:px-4 max-xl:isSticky:bg-rose-50/95 z-5 flex items-center justify-between rounded-full bg-rose-50 shadow-rose-500/40 max-xl:top-4 xl:static xl:py-0"
+    <header
+      class="my-container header max-xl:isSticky:[&>a]:scale-75 max-xl:isSticky:[&_span]:flex max-xl:isSticky:[&>a]:-translate-x-3 max-xl:isSticky:[&>a:last-child]:scale-95 max-xl:isSticky:shadow-[0px_0px_5px_1px_#87635a] max-xl:isSticky:sticky max-xl:isSticky:py-3.5 max-xl:isSticky:w-[95%] max-xl:isSticky:px-4 max-xl:isSticky:bg-rose-50/95 z-5 flex items-center justify-between rounded-full bg-rose-50 shadow-rose-500/40 max-xl:top-4 xl:static xl:py-0"
     >
-      <a href="#body"" class="group text-1 font-bold text-rose-900 transition-transform duration-300 flex items-center gap-2">Desserts <span class="hidden scale-50  opacity-0 group-hover:opacity-100 group-hover:scale-80  transition-[transform_opacity] duration-200 ease-out">&uparrow;</span></a>
+      <a
+        href="#body"
+        class="group text-1 flex items-center gap-1 font-bold text-rose-900 transition-transform duration-300"
+        >Desserts
+        <span class="hidden translate-y-0.5 scale-75 transition-[transform_opacity] duration-200">&uparrow;</span></a
+      >
       <a
         class="flex rounded-full border border-rose-300 bg-white p-3 shadow-md transition-[transform_background-color_shadow] duration-300 ease-out hover:scale-105 hover:bg-rose-50 hover:shadow-lg xl:hidden"
         href="#cart"
@@ -57,6 +62,7 @@
         <img class="mt-10 self-center" src="assets/images/illustration-empty-cart.svg" alt="" />
         <p class="text-4 mt-5 text-center font-bold text-rose-500">Your added items will appear here</p>
       </section>
+
       <div class="overlay fixed inset-0 z-10 hidden bg-rose-900/40 active:block">
         <div
           class="confirm-order xs:p-10 xs:inset-0 xs:h-fit xs:rounded-xl xs:m-auto xs:w-3/4 fixed right-0 bottom-0 z-20 h-fit w-dvw scale-100 space-y-8 rounded-t-xl bg-white px-4 py-10 opacity-100 transition-[opacity_scale] duration-300 ease-in-out sm:p-10 lg:max-w-[700px]"
