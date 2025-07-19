@@ -9,33 +9,37 @@
     <title>Frontend Mentor | Product list with cart</title>
   </head>
   <body id="body" class="bg-rose-50 py-[clamp(1.25rem,-0.2465rem+6.385vw,5.5rem)]">
-    <header
-      class="my-container header max-xl:isSticky:[&>a]:scale-75 max-xl:isSticky:[&_span]:flex max-xl:isSticky:[&>a]:-translate-x-3 max-xl:isSticky:[&>a:last-child]:scale-95 max-xl:isSticky:shadow-[0px_0px_5px_1px_#87635a] max-xl:isSticky:sticky max-xl:isSticky:py-3.5 max-xl:isSticky:w-[95%] max-xl:isSticky:px-4 max-xl:isSticky:bg-rose-50/95 z-5 flex items-center justify-between rounded-full bg-rose-50 shadow-rose-500/40 max-xl:top-4 xl:static xl:py-0"
-    >
-      <a
-        href="#body"
-        class="group text-1 flex items-center gap-1 font-bold text-rose-900 transition-transform duration-300"
-        >Desserts
-        <span class="hidden translate-y-0.5 scale-75 transition-[transform_opacity] duration-200">&uparrow;</span></a
+    <div class="sentinel h-[1px]"></div>
+
+    <header class="my-container header">
+      <nav
+        class="nav max-xl:isSticky:[&>a]:scale-65 max-xl:isSticky:[&_span]:flex max-xl:isSticky:[&>a]:-translate-x-6 max-xl:isSticky:[&>a:last-child]:scale-85 max-xl:isSticky:[&>a:last-child]:translate-x-1 max-xl:isSticky:shadow-[0px_0px_5px_1px_#87635a] max-xl:isSticky:fixed max-xl:isSticky:py-2.8 max-xl:isSticky:w-[95%] max-xl:isSticky:px-4 max-xl:isSticky:bg-rose-50/95 max-xl:isSticky:left-1/2 max-xl:isSticky:-translate-x-1/2 z-5 flex items-center justify-between rounded-full bg-rose-50 shadow-rose-500/40 max-xl:top-4 xl:static xl:py-0"
       >
-      <a
-        class="flex rounded-full border border-rose-300 bg-white p-3 shadow-md transition-[transform_background-color_shadow] duration-300 ease-out hover:scale-105 hover:bg-rose-50 hover:shadow-lg xl:hidden"
-        href="#cart"
-        ><svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="size-6 text-rose-500"
+        <a
+          href="#body"
+          class="group text-1 flex items-center gap-1 font-bold text-rose-900 transition-transform duration-300"
+          >Desserts
+          <span class="hidden translate-y-0.5 scale-75 transition-[transform_opacity] duration-200">&uparrow;</span></a
         >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
-          />
-        </svg>
-      </a>
+        <a
+          class="flex rounded-full border border-rose-300 bg-white p-3 shadow-md transition-[transform_background-color_shadow] duration-300 ease-out hover:scale-105 hover:bg-rose-50 hover:shadow-lg xl:hidden"
+          href="#cart"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6 text-rose-500"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
+            />
+          </svg>
+        </a>
+      </nav>
     </header>
     <main class="my-container grid grid-cols-1 lg:items-start xl:grid-cols-[70fr_30fr] xl:gap-8">
       <section id="products">

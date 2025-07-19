@@ -21,10 +21,36 @@ productsContainer.innerHTML = `
   </article>
 `.repeat(10);
 
-const listCoords = productsContainer.getBoundingClientRect();
-window.addEventListener("scroll", () => {
-  window.scrollY > listCoords.top ? header.classList.add("isSticky") : header.classList.remove("isSticky");
+//* Sticky nav
+// const listCoords = productsContainer.getBoundingClientRect();
+// window.addEventListener("scroll", () => {
+//   window.scrollY > listCoords.top ? header.classList.add("isSticky") : header.classList.remove("isSticky");
+// });
+
+// const obsCallBack = function (entries, observer) {
+//   entries.forEach((entrie) => console.log(entrie));
+// };
+// const obsOptions = {
+//   root: null,
+//   treshold: [0, 0.2],
+// };
+
+// const observer = new IntersectionObserver(obsCallBack, obsOptions);
+// observer.observe(productsContainer);
+const nav = document.querySelector(".nav");
+const navHeight = nav.getBoundingClientRect().height;
+
+const stickyNav = function ([entry]) {
+  nav.classList.toggle("isSticky", !entry.isIntersecting);
+};
+
+const headerObserver = new IntersectionObserver(stickyNav, {
+  root: null,
+  threshold: 0,
+  rootMargin: `${navHeight - 10}px`,
 });
+
+headerObserver.observe(header);
 
 fetch("data.json")
   .then((response) => {

@@ -260,6 +260,9 @@
   .h-64 {
     height: calc(var(--spacing) * 64);
   }
+  .h-\[1px\] {
+    height: 1px;
+  }
   .h-fit {
     height: fit-content;
   }
@@ -889,10 +892,17 @@
       border-radius: var(--radius-md);
     }
   }
-  .max-xl\:isSticky\:sticky {
+  .max-xl\:isSticky\:fixed {
     @media (width < 1192px) {
       &.isSticky {
-        position: sticky;
+        position: fixed;
+      }
+    }
+  }
+  .max-xl\:isSticky\:left-1\/2 {
+    @media (width < 1192px) {
+      &.isSticky {
+        left: calc(1/2 * 100%);
       }
     }
   }
@@ -900,6 +910,14 @@
     @media (width < 1192px) {
       &.isSticky {
         width: 95%;
+      }
+    }
+  }
+  .max-xl\:isSticky\:-translate-x-1\/2 {
+    @media (width < 1192px) {
+      &.isSticky {
+        --tw-translate-x: calc(calc(1/2 * 100%) * -1);
+        translate: var(--tw-translate-x) var(--tw-translate-y);
       }
     }
   }
@@ -920,13 +938,6 @@
       }
     }
   }
-  .max-xl\:isSticky\:py-3\.5 {
-    @media (width < 1192px) {
-      &.isSticky {
-        padding-block: calc(var(--spacing) * 3.5);
-      }
-    }
-  }
   .max-xl\:isSticky\:shadow-\[0px_0px_5px_1px_\#87635a\] {
     @media (width < 1192px) {
       &.isSticky {
@@ -944,35 +955,45 @@
       }
     }
   }
-  .max-xl\:isSticky\:\[\&\>a\]\:-translate-x-3 {
+  .max-xl\:isSticky\:\[\&\>a\]\:-translate-x-6 {
     @media (width < 1192px) {
       &.isSticky {
         &>a {
-          --tw-translate-x: calc(var(--spacing) * -3);
+          --tw-translate-x: calc(var(--spacing) * -6);
           translate: var(--tw-translate-x) var(--tw-translate-y);
         }
       }
     }
   }
-  .max-xl\:isSticky\:\[\&\>a\]\:scale-75 {
+  .max-xl\:isSticky\:\[\&\>a\]\:scale-65 {
     @media (width < 1192px) {
       &.isSticky {
         &>a {
-          --tw-scale-x: 75%;
-          --tw-scale-y: 75%;
-          --tw-scale-z: 75%;
+          --tw-scale-x: 65%;
+          --tw-scale-y: 65%;
+          --tw-scale-z: 65%;
           scale: var(--tw-scale-x) var(--tw-scale-y);
         }
       }
     }
   }
-  .max-xl\:isSticky\:\[\&\>a\:last-child\]\:scale-95 {
+  .max-xl\:isSticky\:\[\&\>a\:last-child\]\:translate-x-1 {
     @media (width < 1192px) {
       &.isSticky {
         &>a:last-child {
-          --tw-scale-x: 95%;
-          --tw-scale-y: 95%;
-          --tw-scale-z: 95%;
+          --tw-translate-x: calc(var(--spacing) * 1);
+          translate: var(--tw-translate-x) var(--tw-translate-y);
+        }
+      }
+    }
+  }
+  .max-xl\:isSticky\:\[\&\>a\:last-child\]\:scale-85 {
+    @media (width < 1192px) {
+      &.isSticky {
+        &>a:last-child {
+          --tw-scale-x: 85%;
+          --tw-scale-y: 85%;
+          --tw-scale-z: 85%;
           scale: var(--tw-scale-x) var(--tw-scale-y);
         }
       }
